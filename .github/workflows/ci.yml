@@ -15,9 +15,11 @@ jobs:
         with:
           project: EPCollaboratif.xcodeproj
           scheme: EPCollaboratif
-          destination: platform=iOS Simulator,name=iPhone 16 Pro
+          destination: platform=iOS Simulator,name=iPhone 14
           action: test
-          build-settings: CODE_SIGNING_ALLOWED='NO'
+          build-settings: |
+            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_REQUIRED=NO
           result-bundle-path: TestResults/TestResults.xcresult
       - name: Process Test Results
         uses: kishikawakatsumi/xcresulttool@v1
